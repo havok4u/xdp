@@ -14,7 +14,8 @@ Test Case 1
        |                            |
 +------+----------------------------+------+
 |               Bridge1                    |
-+------------------------------------------+```
++------------------------------------------+
+```
 
 Insert bpf code on vnet1:
 sudo ip link set dev vnet1 xdpgeneric obj tcp_port.o sec tcpdropper
