@@ -1,5 +1,7 @@
 # xdp
 
+Given: This series of testing was done on 4.15.0-58-generic
+
 Test Case 1
 =========================================================================================
 ```
@@ -51,11 +53,17 @@ Test Case 2
 ```
 ```
 2a) Insert bpf code on veth1
+Kernel 4.15.0-58-generic command
 sudo ip link set dev veth1 xdpgeneric obj tcp_port.o sec tcpdropper
+
+Kernel 5.0.0-25-generic command
+sudo ip link set dev veth1 xdp obj tcp_port.o sec tcpdropper
 
 
 Outcome:
-Drop did not work
+Kernel 4.15.0-58-generic -> Drop did not work
+Kernel 5.0.0-25-generic -> Drop worked
+
 
 Logs:
   iperf3-14425 [015] ..s1 256966.478443: 0x00000001: DEBUG: Entering tcpdropper
